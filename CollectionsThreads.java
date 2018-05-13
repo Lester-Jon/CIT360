@@ -110,10 +110,9 @@ public class CollectionsThreads {
         
         TimeUnit.SECONDS.sleep(2);
         //Add remainging range values to odds for sorting in table using executors
-        ExecutorService executor = Executors.newFixedThreadPool(2);
-        for(int i = 0; i < 3; i++){
+        ExecutorService executor = Executors.newFixedThreadPool(4);
+        for(int i = 0; i < 5; i++){
             Runnable worker = new sortOdds();
-            TimeUnit.MILLISECONDS.sleep(5);
             executor.execute(worker);
         }
         executor.shutdown();
@@ -195,7 +194,7 @@ class sortOdds implements Runnable {
             l = l + 1;
             CollectionsThreads.setL(l);
             try {
-                Thread.currentThread().sleep(10);
+                Thread.currentThread().sleep(50);
             } catch (InterruptedException e) {
             }
             l = CollectionsThreads.getL();
