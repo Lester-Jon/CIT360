@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
 public class CollectionsThreads {
 
     int indexNum = 0;
-    public static int i = 0, j = 0, k = 0, l = 0;
+    public static int i = 0, j = 0, k = 0, l = 100;
 
     public static int getI() {
         return i;
@@ -114,6 +114,7 @@ public class CollectionsThreads {
         for(int i = 0; i < 5; i++){
             Runnable worker = new sortOdds();
             executor.execute(worker);
+            TimeUnit.MILLISECONDS.sleep(5);
         }
         executor.shutdown();
         TimeUnit.SECONDS.sleep(3);
@@ -185,16 +186,16 @@ class sortOdds implements Runnable {
     @Override
     public void run() {
         boolean val;
-        for(int l = CollectionsThreads.getL(); l < 101;){
+        for(int l = CollectionsThreads.getL(); l >= 0;){
             val = CollectionsThreads.getRange(l);
             if(val == true ){
                 CollectionsThreads.setOdds(l, l);
                 System.out.println(Thread.currentThread().getId() + " added number " + l + " to odds");
             }
-            l = l + 1;
+            l = l - 1;
             CollectionsThreads.setL(l);
             try {
-                Thread.currentThread().sleep(50);
+                Thread.currentThread().sleep(20);
             } catch (InterruptedException e) {
             }
             l = CollectionsThreads.getL();
