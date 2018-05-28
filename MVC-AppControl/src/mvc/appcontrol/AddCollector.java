@@ -31,7 +31,7 @@ public class AddCollector implements Collector {
         addView.display();
         boolean done = false; // set flag to not done
         do {
-            // prompt for and get players name
+            
             String value = this.getInput();
             if (value.toUpperCase().equals("Q")) // user wants to quit
                 return; // exit the Program
@@ -49,7 +49,7 @@ public class AddCollector implements Collector {
 
         while(!valid) { // while a valid name has not been retrieved
         
-            //prompt for the player's name
+            
 
             value = keyboard.nextLine(); //get the name from the keyboard
             value = value.trim(); //trim off the excess blanks

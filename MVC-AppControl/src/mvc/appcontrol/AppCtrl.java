@@ -33,7 +33,7 @@ class AppCtrl {
         boolean done = false; // set flag to not done
         do {
             view.start();
-            // prompt for and get players name
+            // prompt for input
             String value = this.getInput();
             if (value.toUpperCase().equals("Q")) // user wants to quit
                 return; // exit the Program
@@ -49,15 +49,15 @@ class AppCtrl {
         String value = "";
         boolean valid = false; //set flag to invalid value entered
 
-        while(!valid) { // while a valid name has not been retrieved
+        while(!valid) { // while a valid input has not been recieved
         
-            //prompt for the player's name
+            //prompt for the input
 
             value = keyboard.nextLine(); //get the name from the keyboard
             value = value.trim(); //trim off the excess blanks
             value = value.toUpperCase(); // converts to upper case letter
         
-            // if the name is invalid (less than one character in length))
+            // if the input is invalid (less than one character in length))
             if (value.length() >= 2) {
               System.out.println(
                  "\n*************************************************************"

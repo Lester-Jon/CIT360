@@ -27,7 +27,7 @@ class RemoveCollector implements Collector {
         removeView.display();
         boolean done = false; // set flag to not done
         do {
-            // prompt for and get players name
+            
             String value = this.getInput();
             if (value.toUpperCase().equals("Q")) // user wants to quit
                 return; // exit the Program
@@ -43,9 +43,9 @@ class RemoveCollector implements Collector {
         String value = "";
         boolean valid = false; //set flag to invalid value entered
 
-        while(!valid) { // while a valid name has not been retrieved
+        while(!valid) { 
         
-            //prompt for the player's name
+            
 
             value = keyboard.nextLine(); //get the name from the keyboard
             value = value.trim(); //trim off the excess blanks
