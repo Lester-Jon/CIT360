@@ -11,13 +11,8 @@ package mvc;
  */
 public class MVC {
 
-static CalculatorController calculatorController = new CalculatorController();
-static CalculatorView calculatorView = new CalculatorView();
-static CalculatorModel calculatorModel = new CalculatorModel();
     public static void main(String[] args) {
-        calculatorView.start();
-    }
-
-
-    
+        CalculatorController calculatorController = new CalculatorController();
+        calculatorController.start();
+    }  
 }

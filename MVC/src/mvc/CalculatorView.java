@@ -8,6 +8,7 @@ package mvc;
 import static java.lang.Integer.parseInt;
 import java.util.Scanner;
 
+
 /**
  *
  * @author Jon
@@ -18,6 +19,14 @@ class CalculatorView {
         int num1;
         int num2;
         int result;
+
+    public int getResult() {
+        return result;
+    }
+
+    public void setResult(int result) {
+        this.result = result;
+    }
     void start() {
         display = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
                 + "~~~    Welcome to the Quick Use Calculator       ~~~\n"
@@ -117,13 +126,11 @@ class CalculatorView {
     private boolean doAction(String value) {
         switch (value) {
             case "1": {
-                   result = MVC.calculatorController.add();
-                   this.printResults();
+                   result = 1;
                    return true;
             }
             case "2": {
-                   result = MVC.calculatorController.multiply();
-                   this.printResults();
+                   result = 2;
                    return true;
             }
             default: {
@@ -134,12 +141,13 @@ class CalculatorView {
  }
 }
 
-    private void printResults() {
+    public void printResults(int results) {
                        System.out.println(
                        "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-                     + "\n~~~~~ Your Result is " + result
+                     + "\n~~~~~ Your Result is " + results
                      + "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
+    
 
 
 }
